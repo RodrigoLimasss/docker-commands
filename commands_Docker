@@ -1,0 +1,25 @@
+----------Commands Docker------------
+
+- Ctrl+P+Q: Sai do container mas continua executando;
+- Ctrl+D: Sai do container e mata o mesmo;
+- docker diff iddocontainer - para ver as modificações que foram feitar no container;
+- docker run -i -t -p 8080:80 ubuntun:14.10 /bin/bash - para criar um novo container, primeiro a porta do host depois 	a porta do container;
+- docker commit iddocontainer nomedocontainerquevcdeseja:1.0;
+- docker stop iddocontainer: parar o container;
+- docker exec iddocontainer ps -ef: para executar um comando no container;
+- docker inspect idcontainer: para visualizar infos do container;
+- docker stats idcontainer: para visualizar o uso de cpu/memória do container;
+- docker rm - f idcontainer: para remover o container;
+- docker rmi -f idimagem: para remover a imagem;
+- docker run -it --name nomedocontainer1 --link nomedocontainer:web2 nomedaimagem /bin/bash;
+- docker build -t nomedaimagem:1.0 . : para criar uma imagem a partir do Dockerfile;
+
+- -t: é o nome da tag da imagem;
+
+
+--DockerFile:
+FROM ubuntu:14.04
+MAINTAINER rlsilva@stone.com.br
+RUN apt-get update && apt-get install -y apache2 && apt-get clean 
+
+
